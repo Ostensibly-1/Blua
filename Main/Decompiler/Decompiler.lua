@@ -165,17 +165,17 @@ function Decompiler:Decompile()
                     Instruction.OP_CONSTANT = Chunk.CONSTANT_LIST[Instruction.OP_REGISTER_B]
                 else
                     if Instruction.OP_IS_KB == true then
-                        if Instruction.OP_MASK.B == "K" then
+                        if Instruction.OP_MASK.B == "RK" then -- i made a silly oppsie here before...
                             Instruction.OP_CONSTANT_B = Chunk.CONSTANT_LIST[Instruction.OP_REGISTER_B - 0xFF]
-                        elseif Instruction.OP_MASK.B == "RK" then
+                        elseif Instruction.OP_MASK.B == "K" then
                             Instruction.OP_CONSTANT_B = Chunk.CONSTANT_LIST[Instruction.OP_REGISTER_B]
                         end
                     end
 
                     if Instruction.OP_IS_KC == true then
-                        if Instruction.OP_MASK.C == "K" then
+                        if Instruction.OP_MASK.C == "RK" then
                             Instruction.OP_CONSTANT_C = Chunk.CONSTANT_LIST[Instruction.OP_REGISTER_C - 0xFF]
-                        elseif Instruction.OP_MASK.C == "RK" then
+                        elseif Instruction.OP_MASK.C == "K" then
                             Instruction.OP_CONSTANT_C = Chunk.CONSTANT_LIST[Instruction.OP_REGISTER_C]
                         end
                     end
